@@ -1,0 +1,38 @@
+{
+	"name": "Event sheet 2",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 850844905161337,
+					"parameters": {
+						"object": "PlayAgainText"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 764211870910184,
+					"parameters": {
+						"layout": "Game Layout"
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 286320941848943,
+					"parameters": {
+						"tag": "\"\""
+					}
+				}
+			],
+			"sid": 856553864772602
+		}
+	],
+	"sid": 835027057976724
+}

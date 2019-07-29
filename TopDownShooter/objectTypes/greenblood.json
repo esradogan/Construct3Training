@@ -1,0 +1,25 @@
+{
+	"name": "GreenBlood",
+	"plugin-id": "Particles",
+	"sid": 947448323035188,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 486722989577632
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 73,
+		"height": 70,
+		"originX": 1.0273972602739727,
+		"originY": 1.2714285714285714,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 3
+	}
+}

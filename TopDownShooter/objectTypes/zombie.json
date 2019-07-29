@@ -1,0 +1,81 @@
+{
+	"name": "Zombie",
+	"plugin-id": "Sprite",
+	"sid": 781483245143759,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "HitPoints",
+			"type": "number",
+			"desc": "",
+			"sid": 191536125582450
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 997046318799679
+		},
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 130113203863365
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 150,
+						"height": 150,
+						"originX": 0.1796875,
+						"originY": 0.35546875,
+						"originalSource": "C:\\Users\\Esra\\Desktop\\Construct\\New folder (2)\\efektli.jpg",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8,
+						"collisionPoly": {
+							"points": [
+								0.00390625,
+								0.99609375,
+								0.00390625,
+								0.5,
+								0.00390625,
+								0.0078125,
+								0.5,
+								0.0078125,
+								0.9921875,
+								0.0078125,
+								0.9921875,
+								0.5,
+								0.9921875,
+								0.99609375,
+								0.5,
+								0.99609375
+							]
+						},
+						"imagePoints": [
+							{
+								"name": "Blood",
+								"x": 0.6133333333333333,
+								"y": 0.5133333333333333
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 954522525124968,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

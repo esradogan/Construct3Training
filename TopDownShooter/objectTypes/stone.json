@@ -1,0 +1,36 @@
+{
+	"name": "Stone",
+	"plugin-id": "Sprite",
+	"sid": 359084177281830,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 27,
+						"height": 37,
+						"originX": 0.5185185185185185,
+						"originY": 0.4864864864864865,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9,
+						"duration": 1
+					}
+				],
+				"sid": 571066689039997,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

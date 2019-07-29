@@ -1,0 +1,520 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 541950097718020
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 406783282447149,
+					"parameters": {
+						"audio-file": "GameSound",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 627109174817487
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 185703765992270
+				}
+			],
+			"actions": [],
+			"sid": 484291063933941,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Zombie",
+							"sid": 990881628619633,
+							"parameters": {
+								"comparison": 2,
+								"x-co-ordinate": "Warrior.X - 50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Zombie",
+							"sid": 418901254035786,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 223236546891132
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Zombie",
+							"sid": 231107284670339,
+							"parameters": {
+								"comparison": 4,
+								"x-co-ordinate": "Warrior.X + 50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Zombie",
+							"sid": 926405232497761,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 911611865095232
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "Zombie",
+							"sid": 160997453450630,
+							"parameters": {
+								"comparison": 2,
+								"y-co-ordinate": "Warrior.Y - 50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Zombie",
+							"sid": 719608734129139,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "down"
+							}
+						}
+					],
+					"sid": 859269184988346
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "Zombie",
+							"sid": 736865900710038,
+							"parameters": {
+								"comparison": 4,
+								"y-co-ordinate": "Warrior.Y + 50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Zombie",
+							"sid": 156617668866466,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "up"
+							}
+						}
+					],
+					"sid": 621640878592455
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Warrior",
+					"sid": 902498771939595,
+					"parameters": {
+						"instance-variable": "Hitpoints",
+						"comparison": 2,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 819199730830938,
+					"parameters": {
+						"layout": "Game Over Layout"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 130726851627715,
+					"parameters": {
+						"audio-file": "GameOverSound",
+						"loop": "looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 231165310486711
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Warrior",
+					"sid": 526167103020299,
+					"parameters": {
+						"object": "Zombie"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Warrior",
+					"sid": 530467554918824,
+					"parameters": {
+						"instance-variable": "Hitpoints",
+						"value": "Self.Hitpoints - 10*dt"
+					}
+				}
+			],
+			"sid": 856123106978127
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 852644609440301
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "HitpointText",
+					"sid": 837623493762677,
+					"parameters": {
+						"text": "round(Warrior.Hitpoints)"
+					}
+				}
+			],
+			"sid": 876340849265816
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 717719348633622
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "Warrior",
+					"sid": 790215808273433,
+					"parameters": {
+						"x": "Mouse.X",
+						"y": "Mouse.Y"
+					}
+				}
+			],
+			"sid": 208285875796073
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 917011169883844,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 358842206104679,
+					"parameters": {
+						"object-to-create": "Bullet",
+						"layer": "\"User Layer\"",
+						"x": "Warrior.ImagePointX(1)",
+						"y": "Warrior.ImagePointY(1)"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "Bullet",
+					"sid": 901872635268365,
+					"parameters": {
+						"angle": "Warrior.Angle"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 556797372124068,
+					"parameters": {
+						"audio-file": "Gunshot",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 537249081283525
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 371179722060867,
+					"parameters": {
+						"key": 87
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Warrior",
+					"sid": 968995692060886,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "up"
+					}
+				}
+			],
+			"sid": 173692620761813
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 175765618448536,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Warrior",
+					"sid": 133434367611623,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "left"
+					}
+				}
+			],
+			"sid": 713520022962642
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 219153923416827,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Warrior",
+					"sid": 868271379403783,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "down"
+					}
+				}
+			],
+			"sid": 672065381347742
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 388752594710717,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Warrior",
+					"sid": 530410506062698,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "right"
+					}
+				}
+			],
+			"sid": 526963738527190
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Bullet",
+					"sid": 483382748062703,
+					"parameters": {
+						"object": "Zombie"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Bullet",
+					"sid": 642043506265508
+				},
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "Zombie",
+					"sid": 521641787872965,
+					"parameters": {
+						"instance-variable": "HitPoints",
+						"value": "25"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 640157553259563,
+					"parameters": {
+						"object-to-create": "GreenBlood",
+						"layer": "2",
+						"x": "Zombie.ImagePointX(1)",
+						"y": "Zombie.ImagePointY(1)"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "GreenBlood",
+					"sid": 572091942207678,
+					"parameters": {
+						"angle": "random(0,360)"
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Zombie",
+					"sid": 407584782353870,
+					"behaviorType": "8Direction"
+				}
+			],
+			"sid": 695199407703465
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Zombie",
+					"sid": 255708326979044,
+					"parameters": {
+						"instance-variable": "HitPoints",
+						"comparison": 2,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Zombie",
+					"sid": 762614263258181
+				}
+			],
+			"sid": 363144827177913
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 651902052115923,
+					"parameters": {
+						"first-value": "Zombie.Count",
+						"comparison": 2,
+						"second-value": "1"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 351684755001689
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 684438830584378,
+					"parameters": {
+						"layout": "You Win Layout"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 566204139127790,
+					"parameters": {
+						"audio-file": "WinSound",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 763472489905383
+		}
+	],
+	"sid": 117753757345703
+}

@@ -1,0 +1,86 @@
+{
+	"name": "Warrior",
+	"plugin-id": "Sprite",
+	"sid": 629833926734675,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Hitpoints",
+			"type": "number",
+			"desc": "0 olunca karakter olecek",
+			"sid": 660510536442029
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 449184970246634
+		},
+		{
+			"behaviorId": "scrollto",
+			"name": "ScrollTo",
+			"sid": 391891282143399
+		},
+		{
+			"behaviorId": "bound",
+			"name": "BoundToLayout",
+			"sid": 549672910407359
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 171,
+						"height": 97,
+						"originX": 0.3742690058479532,
+						"originY": 0.5567010309278351,
+						"originalSource": "C:\\Users\\esradogan\\Desktop\\topdown.jpg",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5,
+						"collisionPoly": {
+							"points": [
+								0.546783625730994,
+								0.1443298969072165,
+								0.976608187134503,
+								0.6701030927835052,
+								0.9678362573099416,
+								0.9948453608247423,
+								0.005847953216374324,
+								1,
+								0.005847953216374324,
+								1,
+								0.005847953216374324,
+								1,
+								0.14619883040935644,
+								0.2525773195876289,
+								0.21929824561403477,
+								0.10309278350515468
+							]
+						},
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0.9649122807017544,
+								"y": 0.7319587628865979
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 788434948302567,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
