@@ -1,0 +1,36 @@
+{
+	"name": "Pumpkin",
+	"plugin-id": "Sprite",
+	"sid": 396587332524734,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 120,
+						"height": 100,
+						"originX": 0.5307017543859649,
+						"originY": 0.5154639175257731,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3,
+						"duration": 1
+					}
+				],
+				"sid": 672706169235627,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

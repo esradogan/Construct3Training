@@ -1,0 +1,128 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 147037729699462
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "Ghost",
+					"sid": 692272399316029,
+					"parameters": {
+						"x": "Self.X",
+						"y": "Self.Y - 10 * dt"
+					}
+				}
+			],
+			"sid": 657821117177191
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 330496806244696,
+					"parameters": {
+						"key": 38
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "Ghost",
+					"sid": 604357312692009,
+					"parameters": {
+						"x": "Self.X",
+						"y": "Self.Y  - Self.Y *dt*3"
+					}
+				}
+			],
+			"sid": 520281336685922
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 834628606428613,
+					"parameters": {
+						"key": 40
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "Ghost",
+					"sid": 516536210863417,
+					"parameters": {
+						"x": "Self.X",
+						"y": "Self.Y  + Self.Y *dt*3"
+					}
+				}
+			],
+			"sid": 442467553173730
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 525945349318532,
+					"parameters": {
+						"key": 39
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "Ghost",
+					"sid": 262397653320934,
+					"parameters": {
+						"x": "Self.X + Self.X * dt * 3",
+						"y": "Self.Y  "
+					}
+				}
+			],
+			"sid": 715005309367648
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 220685524367816,
+					"parameters": {
+						"key": 37
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "Ghost",
+					"sid": 995353036826019,
+					"parameters": {
+						"x": "Self.X - Self.X * dt * 3",
+						"y": "Self.Y  "
+					}
+				}
+			],
+			"sid": 565292814533632
+		}
+	],
+	"sid": 887825832073604
+}

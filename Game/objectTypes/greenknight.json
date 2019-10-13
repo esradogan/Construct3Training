@@ -1,0 +1,47 @@
+{
+	"name": "GreenKnight",
+	"plugin-id": "Sprite",
+	"sid": 297827609253012,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 120,
+						"height": 140,
+						"originX": 0.5128205128205128,
+						"originY": 0.5530973451327433,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 17,
+						"duration": 1
+					},
+					{
+						"width": 120,
+						"height": 140,
+						"originX": 0.5128205128205128,
+						"originY": 0.5530973451327433,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 22,
+						"duration": 1
+					}
+				],
+				"sid": 510088980853005,
+				"name": "Animation 1",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 4,
+				"repeatTo": 0,
+				"speed": 2
+			}
+		],
+		"subfolders": []
+	}
+}
