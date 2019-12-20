@@ -1,0 +1,667 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Direction",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 869627402867275
+		},
+		{
+			"eventType": "variable",
+			"name": "DesiredDirection",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 935643987969782
+		},
+		{
+			"eventType": "variable",
+			"name": "SecondTime",
+			"type": "number",
+			"initialValue": "0.1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 942477854215521
+		},
+		{
+			"eventType": "variable",
+			"name": "IsEaten",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 623160017583873
+		},
+		{
+			"eventType": "variable",
+			"name": "SnakeLength",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 592456703704599
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 267801534243211,
+					"parameters": {
+						"interval-seconds": "SecondTime"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 674879893368549,
+					"parameters": {
+						"variable": "Direction",
+						"value": "DesiredDirection"
+					}
+				}
+			],
+			"sid": 120009981292704,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "PreviousX",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 402016143775478
+				},
+				{
+					"eventType": "variable",
+					"name": "PreviousY",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 272789983767163
+				},
+				{
+					"eventType": "variable",
+					"name": "InternalX",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 739169699274517
+				},
+				{
+					"eventType": "variable",
+					"name": "InternalY",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 957958956169951
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each-ordered",
+							"objectClass": "System",
+							"sid": 174510037413851,
+							"parameters": {
+								"object": "Snake",
+								"expression": "Snake.Order",
+								"order": "ascending"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 366262906943009,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Snake",
+									"sid": 534747406624155,
+									"parameters": {
+										"instance-variable": "Order",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 922481846761199,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 745050807362816,
+											"parameters": {
+												"variable": "PreviousX",
+												"value": "Snake.X"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 977346928642473,
+											"parameters": {
+												"variable": "PreviousY",
+												"value": "Snake.Y"
+											}
+										}
+									],
+									"sid": 297699101205135
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 571372313176501
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 641516895722048,
+											"parameters": {
+												"variable": "Direction",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "Snake",
+											"sid": 763554746311726,
+											"parameters": {
+												"x": "Self.X ",
+												"y": "Self.Y - 16"
+											}
+										}
+									],
+									"sid": 465144654218582
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 174147998106968,
+											"parameters": {
+												"variable": "Direction",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "Snake",
+											"sid": 580163154207466,
+											"parameters": {
+												"x": "Self.X ",
+												"y": "Self.Y + 16"
+											}
+										}
+									],
+									"sid": 152331254752679
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 341655276141224,
+											"parameters": {
+												"variable": "Direction",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "Snake",
+											"sid": 979121602191362,
+											"parameters": {
+												"x": "Self.X + 16",
+												"y": "Self.Y "
+											}
+										}
+									],
+									"sid": 584695834881020
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 241393482423414,
+											"parameters": {
+												"variable": "Direction",
+												"comparison": 0,
+												"value": "4"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position",
+											"objectClass": "Snake",
+											"sid": 731845832321352,
+											"parameters": {
+												"x": "Self.X - 16",
+												"y": "Self.Y "
+											}
+										}
+									],
+									"sid": 123326998392764
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 429988969672425
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 546430433504814,
+									"parameters": {
+										"variable": "InternalX",
+										"value": "Snake.X"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 276830298402530,
+									"parameters": {
+										"variable": "InternalY",
+										"value": "Snake.Y"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "Snake",
+									"sid": 566289225568753,
+									"parameters": {
+										"x": "PreviousX",
+										"y": "PreviousY"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 208957574697625,
+									"parameters": {
+										"variable": "PreviousY",
+										"value": "InternalY"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 504897393690140,
+									"parameters": {
+										"variable": "PreviousX",
+										"value": "InternalX"
+									}
+								}
+							],
+							"sid": 987774577396103
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 970012294164790,
+									"parameters": {
+										"variable": "IsEaten"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 403263408434312,
+									"parameters": {
+										"variable": "SnakeLength",
+										"value": "1"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 395560833108285,
+									"parameters": {
+										"object-to-create": "Snake",
+										"layer": "0",
+										"x": "PreviousX",
+										"y": "PreviousY"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 482231262163357,
+									"parameters": {
+										"variable": "IsEaten",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Snake",
+									"sid": 614671171273636,
+									"parameters": {
+										"instance-variable": "Order",
+										"value": "SnakeLength"
+									}
+								}
+							],
+							"sid": 676725810003375
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 859089285888761,
+					"parameters": {
+						"key": 38
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 303102494262336,
+					"parameters": {
+						"variable": "Direction",
+						"comparison": 1,
+						"value": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 330623911982782,
+					"parameters": {
+						"variable": "DesiredDirection",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 197184955222743
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 941076438203525,
+					"parameters": {
+						"key": 40
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 552716727238574,
+					"parameters": {
+						"variable": "Direction",
+						"comparison": 1,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 513640854148902,
+					"parameters": {
+						"variable": "DesiredDirection",
+						"value": "2"
+					}
+				}
+			],
+			"sid": 551335043736722
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 789035764710226,
+					"parameters": {
+						"key": 39
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 716289007887511,
+					"parameters": {
+						"variable": "Direction",
+						"comparison": 1,
+						"value": "4"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 921757906705744,
+					"parameters": {
+						"variable": "DesiredDirection",
+						"value": "3"
+					}
+				}
+			],
+			"sid": 152182217199203
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 817099412148568,
+					"parameters": {
+						"key": 37
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 773916990654145,
+					"parameters": {
+						"variable": "Direction",
+						"comparison": 1,
+						"value": "3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 747215394150717,
+					"parameters": {
+						"variable": "DesiredDirection",
+						"value": "4"
+					}
+				}
+			],
+			"sid": 554820360167917
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Snack",
+					"sid": 658965986233428,
+					"parameters": {
+						"object": "Snake"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Snack",
+					"sid": 453729039343604
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 595071671173405,
+					"parameters": {
+						"variable": "IsEaten",
+						"value": "true"
+					}
+				},
+				{
+					"id": "rotate-clockwise",
+					"objectClass": "Snack",
+					"sid": 499979802399835,
+					"parameters": {
+						"degrees": "0"
+					}
+				}
+			],
+			"sid": 347108978306839,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 828794505872803,
+							"parameters": {
+								"object-to-create": "Snack",
+								"layer": "0",
+								"x": "16  * int(random(0,854/16))",
+								"y": "16  * int(random(0,30))"
+							}
+						}
+					],
+					"sid": 676556069146400
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "while",
+							"objectClass": "System",
+							"sid": 235948222498834
+						}
+					],
+					"actions": [],
+					"sid": 164941483534605,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Snack",
+									"sid": 610334891155802,
+									"parameters": {
+										"object": "Snake"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "Snack",
+									"sid": 553614081726356,
+									"parameters": {
+										"x": "16  * int(random(0,854/16))",
+										"y": "16  * int(random(0,30))"
+									}
+								}
+							],
+							"sid": 140375169151863
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 678118550809563
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-loop",
+									"objectClass": "System",
+									"sid": 520727800414078
+								}
+							],
+							"sid": 374344921159588
+						}
+					]
+				}
+			]
+		}
+	],
+	"sid": 918273056209428
+}
