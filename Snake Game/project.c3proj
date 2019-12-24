@@ -21,6 +21,14 @@
 			"author": "Scirra",
 			"version": "r180",
 			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r180",
+			"bundled": false
 		}
 	],
 	"uniqueId": "2gtuhcvt9pg",
@@ -28,7 +36,8 @@
 		"items": [
 			"Snake",
 			"Snack",
-			"Keyboard"
+			"Keyboard",
+			"Text"
 		],
 		"subfolders": []
 	},
@@ -74,9 +83,14 @@
 		"icon": {
 			"items": [
 				{
-					"name": "loading-logo.png",
+					"name": "icon-64.png",
 					"type": "image/png",
-					"sid": 550504158291580
+					"sid": 640504264033868
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 555731586489028
 				},
 				{
 					"name": "icon-16.png",
@@ -89,9 +103,9 @@
 					"sid": 862319193618417
 				},
 				{
-					"name": "icon-64.png",
+					"name": "icon-256.png",
 					"type": "image/png",
-					"sid": 640504264033868
+					"sid": 682059425261573
 				},
 				{
 					"name": "icon-128.png",
@@ -99,14 +113,9 @@
 					"sid": 741572378889800
 				},
 				{
-					"name": "icon-256.png",
+					"name": "loading-logo.png",
 					"type": "image/png",
-					"sid": 682059425261573
-				},
-				{
-					"name": "icon-512.png",
-					"type": "image/png",
-					"sid": 555731586489028
+					"sid": 550504158291580
 				}
 			],
 			"subfolders": []
@@ -128,7 +137,7 @@
 	"properties": {
 		"description": "",
 		"version": "1.0.0.0",
-		"author": "",
+		"author": "Esra Doğan",
 		"authorEmail": "",
 		"authorWebsite": "",
 		"appId": "",
